@@ -5,6 +5,8 @@ pipeline {
         stage('clone') {
             steps {
                 checkout scm
+                sh 'sudo apt-get update -y'
+                sh 'sudo apt-get install docker.io -y'
             }
         }
         stage('Build') {
